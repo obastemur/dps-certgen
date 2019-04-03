@@ -11,13 +11,13 @@ node.js version 8+
 ### Install
 
 ```
-npm i -g x509-helper
+npm i -g dps-certgen
 ```
 
 ### Usage
 
 ```
-x509-helper <args>
+dps-certgen <args>
 
 args:
 --new-config  : creates a new 'certgen.config.json' file (overwrites the existing one)
@@ -26,7 +26,7 @@ args:
 
 --is2K : use 2048 bits (not suggested). default 4096 bits
 
-i.e. => x509-helper --new-root-cert
+i.e. => dps-certgen --new-root-cert
 ```
 
 ### Sample usage
@@ -35,14 +35,14 @@ i.e. => x509-helper --new-root-cert
 
 Create a new certificate configuration file
 ```
-x509-helper --new-config
+dps-certgen --new-config
 ```
 
 Edit `certgen.config.json` file on the path.
 
 Create a new x509 certificate / public and private keys
 ```
-x509-helper --new-root-cert
+dps-certgen --new-root-cert
 ```
 
 Command above will create `root-cert.pem`, `root-public-key.pem`, and `root-private-key.pem`
@@ -56,7 +56,7 @@ If any platform asks you to verify your certificate, it will give you a verifica
 Run the command below on your favorite terminal.
 Make sure `root-cert.pem`, `root-public-key.pem`, and `root-private-key.pem` are already on the path.
 ```
-x509-helper --new-leaf-cert PUT_THAT_VERIFICATION_KEY_HERE
+dps-certgen --new-leaf-cert PUT_THAT_VERIFICATION_KEY_HERE
 ```
 
 Command above will create `subject-cert.pem`, `subject-public-key.pem`, and `subject-private-key.pem`
@@ -68,7 +68,7 @@ Use `subject-cert.pem` in order to verify the ownership.
 
 Make sure `root-cert.pem`, `root-public-key.pem`, and `root-private-key.pem` are already on the path.
 ```
-x509-helper --new-leaf-cert PUT_DEVICE_ID_HERE
+dps-certgen --new-leaf-cert PUT_DEVICE_ID_HERE
 ```
 
 Command above will create `subject-cert.pem`, `subject-public-key.pem`, and `subject-private-key.pem`

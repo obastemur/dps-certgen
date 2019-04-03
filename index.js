@@ -92,7 +92,7 @@ function dump_config(force) {
   if (force || !exists) {
     var config_path = path.join(user_current_path, 'certgen.config.json');
     console.log('\nDumped default certificate configuration into', colors.bold(config_path));
-    console.log('Feel free to edit this file and execute `x509-helper` tool with `--new-root-cert` argument to use it');
+    console.log('Feel free to edit this file and execute `dps-certgen` tool with `--new-root-cert` argument to use it');
     fs.writeFileSync(config_path, JSON.stringify(default_config, 0, 2));
   }
 }
@@ -196,13 +196,13 @@ function create_signed(subject) {
 
 function showUsage() {
   console.log('Usage:');
-  console.log(colors.bold('x509-helper'), '<args>');
+  console.log(colors.bold('dps-certgen'), '<args>');
   console.log('\nargs:');
   console.log('--new-config  : creates a new certgen.config.json file (overwrites the existing one)');
   console.log('--new-root-cert : creates a new root certificate that is based on certgen.config.json');
   console.log('--new-leaf-cert <subject> : creates a new certificate and signs it with the root certificate\'s private key');
   console.log('\n--is2K : use 2048 bits. default 4096 bits');
-  console.log('\ni.e. => x509-helper --new-root-cert');
+  console.log('\ni.e. => dps-certgen --new-root-cert');
   console.log('');
 }
 

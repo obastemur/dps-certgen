@@ -1,5 +1,5 @@
 {
-  "name": "x509-helper",
+  "name": "dps-certgen",
   "version": "0.0.3",
   "description": "x509 Certificate Helper Tool",
   "main": "index.js",
@@ -13,6 +13,6 @@
     "node-forge": "^0.8.2"
   },
   "bin": {
-    "x509-helper": "./index.js"
+    "dps-certgen": "./index.js"
   }
 }
